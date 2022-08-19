@@ -1,4 +1,11 @@
 
+<#
+.SYNOPSIS
+Script to Gather the necessairy information for computer inventory
+.DESCRIPTION
+This is a script I use for computer inventory, only thing that is still not working is the moniotor information gathering.
+#>
+
 
 function Get-InfoMachine {
     [CmdletBinding()]
