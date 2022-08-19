@@ -33,22 +33,8 @@ function Get-InfoMachine {
         $output.MACAddress = $network.MACAddress
         $output.System = (Get-WmiObject -Class win32_operatingsystem).Caption
         $output.Office = (Get-WmiObject -Class win32_product -ComputerName $ComputerName | Where-Object {$_.Name -like "Microsoft Office Standard*" -or $_.Name -like "Microsoft Office Professional*"}).Name
-        # $cle_windows = Get-ItemProperty -Path "Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion".ProductId
-        # New-Object -ComObject 'Outlook.Application'
-        # $comptes = $outlook.session.Accounts
         
-
-
-        <#   Write-Host "Marque: " $machine.systemfamily
-        Write-Host "Numero de serie: " $serialnumber
-        Write-Host "Adresse MAC: " $network.MACAddress
-        Write-Host "Adresse IP: " $network.IPAddress[0]
-        Write-Host "Session Machine: "
-        Write-Host "Nom Machine: "
-        # Write-Host "Clé windows: " $cle_windows.ProductId
-        Write-Host "Système: " $OS.Caption
-        Write-Host "Office: " $office.Name #>
-
+        
 
         [PSCustomObject]$output
     }else {
